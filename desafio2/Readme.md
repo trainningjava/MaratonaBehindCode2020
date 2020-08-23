@@ -1,0 +1,1 @@
+Neste desafio, o participante irá utilizar ferramentas da IBM como o Watson Machine Learning e o Cloud Pak for Data para construir um modelo baseado em machine learning e integrá-lo com uma solução de assistente virtual, voltada para a tutoria remota. Sua tarefa será aprimorar um modelo já fornecido e integrar os diversos serviços envolvidos nessa solução!
