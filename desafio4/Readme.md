@@ -1,0 +1,1 @@
+Este desafio tem como objetivo criar um modelo no Modeler Flow (SPSS) capaz de encontrar o melhor candidato de acordo com as variáveis do dataset fornecido. Sua terefa é modelar os dados de tal forma que o modelo que recebe como entrada todas as colunas do dataset e forneça como saída se o canditado deve ser contrado ou não.
