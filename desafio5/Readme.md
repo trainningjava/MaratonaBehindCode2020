@@ -1,1 +1,6 @@
-Este desafio tem como objetivo criar um modelo no Modeler Flow (SPSS) capaz de encontrar o melhor candidato de acordo com as variáveis do dataset fornecido. Sua terefa é modelar os dados de tal forma que o modelo que recebe como entrada todas as colunas do dataset e forneça como saída se o canditado deve ser contrado ou não.
+Oferecer ao cliente um assistente virtual que o auxilie a encontrar o melhor local para sacar seu dinheiro. O assistente deverá interagir com o cliente, respondendo a perguntas que consideram uma ou mais das seguintes condições:
+
+* Localização: pontos mais próximos, de acordo com um raio de distância;
+* Disponibilidade de um valor definido para saque: dependendo do valor requerido e dos tipos de notas disponíveis nos caixas eletrônicos próximos, pode-se concluir sobre a melhor recomendação: se em ATMs ou caixas de comércios;
+* Tipo de ponto: Os saques podem considerar tanto ATMs como Comércios;
+* Tipo de comércio: o cliente pode preferir encontrar uma farmácia onde possa sacar e também comprar seus remédios. De forma similar, poderia preferir padarias ou supermercados; A solução encontrará o ponto de atendimento mais próximo, conforme as necessidades do cliente, baseada nas respostas dadas ao assistente, e para os casos de comércio, caso haja alguma promoção registrada no sistema, será apresentada juntamente com os dados de endereço.
