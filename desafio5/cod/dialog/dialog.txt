@@ -1,0 +1,78 @@
+- Bem-vindo
+
+If assistant recognizes
+=======================
+welcome
+
+Assistant responds
+==================
+Text
+Olá. Como posso te ajudar? <? context.clear() ?>
+
+================================================================
+
+Saudacao
+
+If assistant recognizes
+=======================
+#Saudacao
+
+Assistant responds
+==================
+Text
+Olá, sou assistente virtual capaz te
+dizer onde está a ATM mais próxima
+de você desde que esteja em
+Brasília-DF! <? context.clear() ?>
+
+================================================================
+
+Saque
+=====
+Check for	Save it as	If not present, ask
+
+@Locais         $bairro         Em qual bairro de Brasília você está?
+@sys-number     $quantia        Quanto deseja sacar?
+@Segmento       $segmento       Prefere sacar em algum supermercado, farmácia ou loja de conveniência ou qualquer ATM serve?
+
+
+Then callout to my webhook
+==========================
+Parameters
+Key	        Value
+bairro          "$bairro"
+quantia         "$quantia"
+segmento        "$segmento"
+
+
+Return variable
+===============
+res
+
+
+Assistant responds
+==================
+
+If assistant recognizes	              Respond with
+$res && !$res.err                     O caixa mais próximo esta localizadano $res.local, na $res.rua, número $res.numero com o cep $res.cep. $res.promocao
+$res && $res.err                      $res.errMsg
+anything_else                         Não entendi. Tente novamente
+
+
+================================================================
+
+- finalizacao
+
+If assistant recognizes
+=======================
+#finalizacao
+
+Assistant responds
+==================
+Text
+Tchau volte sempre <? context.clear() ?>
+Estamos sempre a disposição <? context.clear() ?>
+Fico feliz em ajudar e volte sempre <? context.clear() ?>
+
+================================================================
+
