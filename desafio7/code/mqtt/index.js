@@ -1,41 +1,40 @@
-const mqtt = require('mqtt');
-const writeFile = require('fs').appendFileSync;
+const mqtt = require("mqtt");
+const writeFile = require("fs").appendFileSync;
 
-const fs = require('fs');
+const fs = require("fs");
 
 var client = mqtt.connect({
-  host: 'tnt-iot.maratona.dev',
+  host: "tnt-iot.maratona.dev",
   port: 30573,
-  username: 'maratoners',
-  password: 'ndsjknvkdnvjsbvj'
+  username: "maratoners",
+  password: "ndsjknvkdnvjsbvj",
 });
 
-client.on('message', (topic, message) => {
-  console.log('receive message：', topic, message.toString())
-})
+client.on("message", (topic, message) => {
+  console.log("receive message：", topic, message.toString());
+});
 
-client.on('connect', function () {
-  client.subscribe('tnt', function (err) {
+client.on("connect", function () {
+  client.subscribe("tnt", function (err) {
     if (!err) {
-      client.publish('presence', 'Hello mqtt')
+      client.publish("presence", "Hello mqtt");
     }
-  })
-})
+  });
+});
 
 function saveJson(item) {
-  writeFile('./data.csv', item + "\n", (err) => {
+  writeFile("./data.csv", item + "\n", (err) => {
     if (err) {
       console.log(err);
       throw new Error(err);
     }
   });
-};
+}
 
 let cont = 0;
 let header = 0;
 
-client.on('message', function (topic, message) {
-
+client.on("message", function (topic, message) {
   // message is Buffer
   console.log("contador = " + cont);
 
@@ -44,7 +43,9 @@ client.on('message', function (topic, message) {
 
   var obj = JSON.parse(obj1);
   var keys = Object.keys(obj);
-  let value = ""
+  //Exclude the row field
+  keys = keys.slice(0, keys.length - 1);
+  let value = "";
   for (var i = 0; i < keys.length; i++) {
     value += value === "" ? obj[keys[i]] : "," + obj[keys[i]];
   }
@@ -52,9 +53,10 @@ client.on('message', function (topic, message) {
     saveJson(keys);
     header = 1;
   }
+  saveJson(value);
 
-  cont++
-  if (cont >= 2500) {
-    client.end()
+  cont++;
+  if (cont >= 2) {
+    client.end();
   }
-})
+});
