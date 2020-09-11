@@ -44,7 +44,8 @@ client.on("message", function (topic, message) {
   var obj = JSON.parse(obj1);
   var keys = Object.keys(obj);
   //Exclude the row field
-  keys = keys.slice(0, keys.length - 1);
+  //keys = keys.slice(0, keys.length - 1);
+  keys = keys.slice(0, keys.length);
   let value = "";
   for (var i = 0; i < keys.length; i++) {
     value += value === "" ? obj[keys[i]] : "," + obj[keys[i]];
@@ -56,7 +57,7 @@ client.on("message", function (topic, message) {
   saveJson(value);
 
   cont++;
-  if (cont >= 2) {
+  if (cont >= 15000) {
     client.end();
   }
 });
