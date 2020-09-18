@@ -1,0 +1,11 @@
+applications:
+  - name: maratona-desafio8-luiz
+    path: .
+    command: node index.js
+    instances: 1
+    routes:
+      - route: maratona-desafio8-luiz.apic.mybluemix.net
+    random-route: true
+    memory: 128M
+    env:
+      LOCATION: 'IBM Cloud'

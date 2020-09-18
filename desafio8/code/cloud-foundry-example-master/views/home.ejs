@@ -1,0 +1,39 @@
+<h1>Desafio8</h1>
+
+<h1>Hello from <%= process.env.LOCATION || "local"; %></h1>
+
+<form
+  name="formData"
+  action="/recommend"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <select name="car" id="car">
+    <option value="TORO">TORO</option>
+    <option value="DUCATO">DUCATO</option>
+    <option value="FIORINO">FIORINO</option>
+    <option value="CRONOS">CRONOS</option>
+    <option value="FIAT 500">FIAT 500</option>
+    <option value="MAREA">MAREA</option>
+    <option value="LINEA">LINEA</option>
+    <option value="ARGO">ARGO</option>
+    <option value="RENEGADE">RENEGADE</option>
+  </select>
+  <br />
+  <input
+    type="text"
+    name="text"
+    id="text"
+    value="O Jeep Renegade é o SUV compacto mais vendido do Brasil e está onde está muito em virtude do seu design. Apela para linhas mais brutas e retas e a características clássicas dos Jeep do passado, como os faróis redondos e a grade vertical marcante."
+    placeholder="Texto contendo uma crítica ou comentário sobre um carro"
+  />
+  <br />
+  <input
+    type="file"
+    name="audio"
+    id="audio"
+    placeholder="Áudio em formato FLAC contendo uma crítica ou comentário sobre um carro"
+  />
+  <br />
+  <button type="submit">Enviar</button>
+</form>
