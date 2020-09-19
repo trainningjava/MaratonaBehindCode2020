@@ -1,0 +1,1 @@
+você deverá utilizar um jupyter notebook para criar um modelo de aprendizado de máquina capaz, com base nas variáveis fornecidas no dataset, identificar o que define o perfil de cada aluno para poder realizar previsões sobre futuros alunos.
